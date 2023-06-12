@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+    </head>
+    <body>
+        <header>
+            <h2>나의 코치, 나(main page)</h2>
+        </header>
+        <nav></nav>
+        <main>
+            <input type=button onClick="parent.location='training/?videoId=5'" value="운동테스트(고관절)">
+            <input type=button onClick="parent.location='health_report/'" value="리포트테스트">
+            <form method="POST">
+                {% csrf_token %}
+                입력 테스트: <input type="text">
+            </form>
+        </main> 
+        <footer>
+            <h3>하단</h3>
+        </footer>
+        
+    </body>
+    <script src="{% static 'health_do/js/index.js' %}">
+    </script>
+</html>

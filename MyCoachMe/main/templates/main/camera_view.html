@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'health_do/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'health_do/css/loading_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+
+    <div class="title_box">
+        <h1 class="page_title">영상 촬영</h1>
+        <label class="explain">합성 서비스에 사용될 소스 영상을 촬영합니다.</label>
+    </div>
+    <div class="btns_grid">
+                <button id="btn_start" class="font_style btn btnBlue">촬영 시작</button>
+                <button id="btn_stop" class="font_style btn btnGray">촬영 종료</button>
+    </div>
+    <div class="loading_box">
+        <div class="loadingio-spinner-spin-1ftyz6tdt2z"><div class="ldio-8g26t8wd8uq">
+        <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
+        </div></div>
+        <br>
+        <label class="font_style">촬영한 영상을 저장중입니다....</label>
+    </div>
+    <main class="video_box">
+        <div style="display: flex;width:100%;padding:20px;">
+            <!-- <div style="flex:1;">
+                <video id="video_user" width="100%" autoplay class="video_style"></video>
+            </div> -->
+            <div style="flex:2;text-align:center;">
+                <video id="video_user" src="{% static video_path %}" class="video_style" width="50%" muted ></video>
+            </div>
+        </div>
+        <div style="display: flex;width:100%">
+            <div style="flex:1;text-align:center;">
+                <label style="color: white;text-align:center;"  class="font_style">당신의 모습</label>
+            </div>
+        </div>
+        <script>
+            const video_user = document.getElementById("video_user");
+            var loadingBox = document.querySelector('.loading_box');
+            document.getElementById("btn_start").addEventListener("click", function() {
+                video_user.play();
+            });
+            document.getElementById("btn_stop").addEventListener("click", function() {
+                loadingBox.style.display="block";
+                setTimeout(function() {
+                    window.close();  // 창 닫기
+                }, 2000); 
+            });
+        </script>
+    </main>
+    <script src="{% static 'health_do/js/training_cam.js' %}"></script>
+</body>
+</html>
