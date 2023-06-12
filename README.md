@@ -13,7 +13,7 @@ openpose와 영상 합성을 활용한 운동 웹사이트
 
 ## 실행 방법
 
-1. [해당 링크]()에서 openpose를 다운받아 MyCoachMe>MyCoachMe 경로에 압축 해제한다. (용량상의 문제로 분리함)
+1. [해당 링크](https://drive.google.com/file/d/1zm2PIIlOtf3JKlKAY_mhRronvmcz4EVt/view?usp=sharing)에서 openpose를 다운받아 MyCoachMe>MyCoachMe 경로에 압축 해제한다. (용량상의 문제로 분리함. 컴파일과 모델 설치가 완료된 openpose파일)
  - 다운에 문제가 생긴다면, [openpose 공식 github](https://github.com/CMU-Perceptual-Computing-Lab/openpose)에서 openpose를 다운받고, 가이드라인대로 모델을 설치한다.
 
 2. conda 가상환경 설치 및 실행
